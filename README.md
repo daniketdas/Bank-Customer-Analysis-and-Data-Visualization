@@ -1,1 +1,2 @@
 # Bank-Customer-Analysis-and-Data-Visualization
+In this project, I collected and cleaned data from a Kaggle dataset containing customer details from a USA bank. Through extensive data exploration and visualization, I aimed to provide intuitive insights and identify patterns within the dataset. The primary goal was to assist the bank's marketing department in pinpointing potential loan customers with a higher likelihood of making a purchase.
