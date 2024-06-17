@@ -11,7 +11,7 @@ So, first I imported all required libraries i.e. pandas, numpy for dataframe and
 
 ![image](https://github.com/daniketdas/Bank-Customer-Analysis-and-Data-Visualization/assets/162815966/2524b0bc-3b74-473e-aba0-e8f2b4e39e99)
 * Then I checked for null values and found no null values in the dataset.
-#### checking some statistical summary and frequency distribution of few important predictors using boxplot and histograme.
+#### checking some statistical summary and frequency distribution of few important predictors using boxplot and histogram.
 ![image](https://github.com/daniketdas/Bank-Customer-Analysis-and-Data-Visualization/assets/162815966/12e94c3d-f6fd-4122-a335-0d66bc298d13)
 
 Some basic observations from these boxplots:
