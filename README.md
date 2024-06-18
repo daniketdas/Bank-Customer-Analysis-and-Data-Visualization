@@ -39,7 +39,7 @@ This replaced all the negative experiences with the mean of all experiences list
 ## Correlation between variables:
 ![image](https://github.com/daniketdas/Bank-Customer-Analysis-and-Data-Visualization/assets/162815966/caaf1721-9c8b-4545-b0bf-3e2f7dae5581)
 
-From this heatmap it was evident that Age and Experience were highly correlated, so I removed Experience column from my analysis in order to avoid multicollinearity and deleted Exeperience instead of Age because Agw plays a more vital role in targeting potential customers.
+From this heatmap it was evident that Age and Experience were highly correlated, so I removed Experience column from my analysis in order to avoid multicollinearity and deleted Exeperience instead of Age because Age plays a more vital role in targeting potential customers.
 
 #### Pie chart of education qualifications and account-holder-category of all the customers
 ![image](https://github.com/daniketdas/Bank-Customer-Analysis-and-Data-Visualization/assets/162815966/6bf1ebf2-f749-4bc8-a403-3112f8a5fb25)
