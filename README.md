@@ -1,7 +1,8 @@
-# Bank-Customer-Analysis-and-Data-Visualization
+# Bank Customer Data Analysis and Personal Loan Prediction
 
 ## Objective:
-To give an intuitive view of the dataset so as to help the marketing department of the bank to identify the potential customers who have a higher probability of purchasing the loan.
+1) First to give an intuitive view of the dataset so as to help the marketing department of the bank to identify the potential customers who have a higher probability of purchasing the loan.
+2) To built a model which can accurately pedict whether a new customer will opt for personal loan or not.
 ## Data Source:
 The dataset used in this project was obtained from Kaggle. The dataset contains customer details of a USA bank, including demographic information and banking behavior.
 ## Importation of Required Libraries and Data:
@@ -42,7 +43,7 @@ This replaced all the negative experiences with the mean of all experiences list
 From this heatmap it was evident that Age and Experience were highly correlated, so I removed Experience column from my analysis in order to avoid multicollinearity and deleted Exeperience instead of Age because Age plays a more vital role in targeting potential customers.
 
 #### Pie chart of education qualifications and account-holder-category of all the customers
-![image](https://github.com/daniketdas/Bank-Customer-Analysis-and-Data-Visualization/assets/162815966/6bf1ebf2-f749-4bc8-a403-3112f8a5fb25)
+![image](https://github.com/daniketdas/Bank-Customer-Data-Analysis-and-Personal-Loan-Prediction/assets/162815966/a0932c03-76e4-42e0-8769-1bafcfa2cb20)
 
 ![image](https://github.com/daniketdas/Bank-Customer-Analysis-and-Data-Visualization/assets/162815966/0bf46546-50a1-422e-803d-d7d20216b828)
 
@@ -71,6 +72,79 @@ From this analysis conducted over 5000 customers,
 * We can also check customers' credit card spendings, as high credit card spending indicates higher earning.
 * Then almost 60% of customers use online banking, bank can check their their spending pattern and design a personal loan for them.
 * ~87% of the customers do not hold any of CD or Security accout, bank can target them for personal loan.
+
+## Model Building:
+#### Getting Dummy Variable:
+![image](https://github.com/daniketdas/Bank-Customer-Data-Analysis-and-Personal-Loan-Prediction/assets/162815966/c46a91bf-b4cf-458e-9a21-da7acd335f68)
+![image](https://github.com/daniketdas/Bank-Customer-Data-Analysis-and-Personal-Loan-Prediction/assets/162815966/9d357a3e-1a66-4919-a94d-abb20050082d)
+
+As in the dataset only Education level was in categorical form so I made a dummy of them and cancated them with the main dataframe.
+
+![image](https://github.com/daniketdas/Bank-Customer-Data-Analysis-and-Personal-Loan-Prediction/assets/162815966/ca22b7b2-9fa3-4747-9077-763357d4c350)
+Then dropped one dummy variable in order to to avoid dummy variable trap.
+
+#### Outlier Removal:
+* Income:
+
+![image](https://github.com/daniketdas/Bank-Customer-Data-Analysis-and-Personal-Loan-Prediction/assets/162815966/c4c2323f-621f-4a56-b98f-612f3e7479b4)
+
+First removed outliers from Income column. Incomes that lied outside one standard deciation from the mean, were removed from the dataset.
+
+* Age:
+
+![image](https://github.com/daniketdas/Bank-Customer-Data-Analysis-and-Personal-Loan-Prediction/assets/162815966/412d2b10-a90d-47c7-91a8-2341a5e25dca)
+
+So, here I did not include datapoints with Age 23 and 67 as they had very less datapoints. I only considered those Ages which had minimum 10 datapoints.
+
+#### Splitting into dependent and independent variables:
+![image](https://github.com/daniketdas/Bank-Customer-Data-Analysis-and-Personal-Loan-Prediction/assets/162815966/e49932ba-91a9-45d9-987a-4400b01bce03)
+
+#### Data Normalization:
+![image](https://github.com/daniketdas/Bank-Customer-Data-Analysis-and-Personal-Loan-Prediction/assets/162815966/894fa32a-cc22-4237-b638-c6dd5119dda7)
+
+#### Train-Test Split:
+![image](https://github.com/daniketdas/Bank-Customer-Data-Analysis-and-Personal-Loan-Prediction/assets/162815966/1fa78945-6f46-48ff-80eb-913d4c53c676)
+
+#### Model Building Using Logistic Regression:
+![image](https://github.com/daniketdas/Bank-Customer-Data-Analysis-and-Personal-Loan-Prediction/assets/162815966/43d646ad-d7e0-46c3-97a6-99863878bd97)
+
+Then I used Logistic Regression to build my model and trained my model using training dataset. Then predicted labels over test data. yhat_prob shows the probability of each data belonging to each label.
+
+####  Model Evaluation:
+* Using Jaccard Index:
+![image](https://github.com/daniketdas/Bank-Customer-Data-Analysis-and-Personal-Loan-Prediction/assets/162815966/31747107-af74-4f04-bbcc-164200e07fc7)
+
+This shows that almost 97.8% of the predicted labels matched with the actual labels.
+
+* Using LogLoss:
+![image](https://github.com/daniketdas/Bank-Customer-Data-Analysis-and-Personal-Loan-Prediction/assets/162815966/d5334ceb-58bd-4ef5-8eaa-359e5f476a06)
+
+My model had a logloss around 0.14. This indicates my model is well enough at performing over new data. Because a good performing model's logloss lies close to 0.
+
+##### Predicted for new customer:
+![image](https://github.com/daniketdas/Bank-Customer-Data-Analysis-and-Personal-Loan-Prediction/assets/162815966/1fde68ce-1f8e-413f-b887-7dcac270d92d)
+
+Here, predicted if a customer with Age=34, Income=90k, Family=2, CCAvg=2.3, Mortgage=0, Securities Account=1, CD Account=0, Online=1, CreditCard=1, Graduate=0, Post-graduate=0 (that means customer is an under-graduate) will opt for personal loan or not.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
